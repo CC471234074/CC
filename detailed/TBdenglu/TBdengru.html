@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+	<style>
+		input{
+			outline:none;
+		}
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.logo{
+			width: 4.13333333rem;
+			height: 4.13333333rem;
+			background: url(https://gw.alicdn.com/tfs/TB1p.BGQXXXXXbFXFXXXXXXXXXX-160-160.png) no-repeat;
+			background-size: contain;
+			margin: 3.25333333rem auto 0;
+		}
+		.zkou{
+			text-align: center;
+		}
+		.kou{
+			margin-top: 50px;
+		}
+		.kou input{
+			width: 250px;
+			height: 20px;
+			border: 0;
+		}
+		.ku{
+			margin-top: 25px;
+		}
+		.ku input{
+			width: 230px;
+			height: 20px;
+			border: 0;
+		}
+		.ku img{
+			position: relative;
+    top: 5px;
+		}
+		.henxian{
+			border-bottom: 1px solid #ff5000;
+			width: 270px;
+            margin: 0 auto;
+            display: block;
+		}
+		.zhuce{
+			margin-top: 25px;
+		}
+		.zhuce a{
+			text-decoration: none;
+		}
+		.zhuce .mfzc{
+			font-size: 12px;
+			color: darkgray;
+			    margin-left: 30px;
+		}
+		.zhuce .wjmm{
+			font-size: 12px;
+			color: darkgray;
+			margin-left: 160px;
+		}
+		.dengru{
+			width: 230px;
+    height: 35px;
+    text-align: center;
+    margin-left: 40px;
+    margin-top: 32px;
+        background: #ff5000;
+    line-height: 35px;
+    border-radius: 20px;
+    color: white;
+		}
+		.duanxin{
+			width: 230px;
+    height: 35px;
+    text-align: center;
+    margin-left: 40px;
+    margin-top: 32px;
+        background:white;
+            border: 1px solid #ff5000;
+    line-height: 35px;
+    border-radius: 20px;
+    color:#ff5000;
+		}
+	</style>
+	<body>
+		<div class="logo"></div>
+		<div class="zkou">
+			<div class="kou">
+				<input class="zhanghao"type="text" placeholder="手机号/邮箱/会员名" value=""/>
+				<span class="xx" style="display: none;">x</span>
+				<div class="henxian"></div>
+			</div>
+			<div class="ku">
+				<input class="mima" type="password" value="" placeholder="请输入密码"/>
+				<span class="xc" style="display:none;">x</span>
+				<img src="QQ截图20170620101153.png"/>
+				<div class="henxian"></div>
+			</div>
+		</div>
+		<div class="zhuce">
+			<a class="mfzc" href="">免费注册</a>
+			<a class="wjmm" href="">忘记密码</a>
+		</div>
+		<div class="dengru">
+			登录
+		</div>
+		<div class="duanxin">
+			短信验证码登录
+		</div>
+		<script>
+			
+
+			
+			$(document).click(function(){
+   			 $(".xx").hide();
+		});
+		$(".xx").click(function(event){
+			 event.stopPropagation();
+			$(".zhanghao").val("");
+			$(".xx").hide();
+		})
+		$(".zhanghao").click(function(event){
+			event.stopPropagation();
+			var name = $(".zhanghao").val();
+			if(name == ""){
+				$(".xx").hide();
+			}else{
+			$(".xx").show();
+			}	
+		})
+            
+//          $(document).click(function(){
+// 			 $(".xc").hide();
+//		});
+//		$(".xc").click(function(event){
+//			 event.stopPropagation();
+//			$(".mima").val("");
+//			$(".xc").hide();
+//		})
+//		$(".mima").click(function(event){
+//			event.stopPropagation();
+//			var name = $(".mima").val();
+//			if(name == ""){
+//				$(".xc").hide();
+//			}else{
+//			$(".xc").show();
+//			}	
+//		})
+        $(document).click(function(){
+        	$(".xc").hide();
+        });
+        $(".xc").click(function(event){
+        	event.stopPropagation();
+        	$(".mima").val("");
+        	$("xc").hide();
+        })
+        $(".mima").click(function(event){
+        	event.stopPropagation();
+        	var a = $(".mima").val();
+        	if(a == ""){
+        		$(".xc").hide();
+        	}else{
+        		$(".xc").show();
+        	}
+        })
+
+
+
+
+
+
+			
+			$(".dengru").click(function(){
+				var a=$(".zhanghao").val();
+				var b=$(".mima").val();
+				if(a=="123" && b=="123"){
+					$.cookie("hzc","qq",{expires:7});
+				}else{
+					alert("登录错误");
+				}
+			});
+			$(function(){
+				if($.cookie('c') == null){
+				}else{
+					
+				}
+				
+			})
+		</script>
+		
+	</body>
+</html>
